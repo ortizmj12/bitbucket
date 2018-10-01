@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+```
+This script is used to update the build status on a commit/PR in Bamboo.
+```
+
 import sys
 import argparse
 import yaml
@@ -40,8 +44,8 @@ def get_creds():
     credentials_file = home + '/.credentials'
     if os.path.isfile(credentials_file):
         credentials = yaml.load(open(credentials_file))
-        username = credentials['sqsp-ldap']['username']
-        password = credentials['sqsp-ldap']['password']
+        username = credentials['ldap']['username']
+        password = credentials['ldap']['password']
         return username, password
     else:
         print(credentials_file + ' does not exist.')
